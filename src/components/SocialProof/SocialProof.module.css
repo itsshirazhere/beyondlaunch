@@ -1,0 +1,212 @@
+.section {
+  padding: 120px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse 60% 40% at 50% 0%, rgba(255, 83, 32, 0.05) 0%, transparent 60%);
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 60px;
+}
+
+.label {
+  display: inline-flex;
+  font-size: 11px;
+  color: var(--accent);
+  font-family: var(--font-body);
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+  padding: 6px 14px;
+  background: rgba(255, 83, 32, 0.07);
+  border: 1px solid rgba(255, 83, 32, 0.18);
+  border-radius: 100px;
+}
+
+.heading {
+  font-family: var(--font-heading);
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--text-heading);
+  margin-bottom: 60px;
+  letter-spacing: -0.015em;
+}
+
+/* ── Stats bar ──────────────────────────────────────────────── */
+.statsBar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 48px;
+  margin-bottom: 72px;
+  padding: 36px 40px;
+  background: var(--surface);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.statsBar::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 80% at 20% 50%, rgba(255,83,32,0.06) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.statDivider {
+  width: 1px;
+  height: 52px;
+  background: linear-gradient(180deg, transparent, rgba(255, 83, 32, 0.25) 50%, transparent);
+  flex-shrink: 0;
+}
+
+/* ── Testimonials ───────────────────────────────────────────── */
+.testimonials {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.card {
+  background: var(--surface);
+  border-radius: 20px;
+  padding: 36px;
+  position: relative;
+  overflow: hidden;
+  cursor: default;
+  transition: box-shadow 0.3s;
+}
+
+.card:hover {
+  box-shadow: 0 16px 60px rgba(0, 0, 0, 0.35), 0 0 40px rgba(255, 83, 32, 0.07);
+}
+
+/* Gradient border via absolute pseudo-like div */
+.cardBorder {
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  pointer-events: none;
+  border: 1px solid transparent;
+  background:
+    linear-gradient(var(--surface), var(--surface)) padding-box,
+    linear-gradient(135deg, rgba(255,83,32,0.35), transparent 55%, rgba(255,83,32,0.1)) border-box;
+}
+
+.quoteGlyph {
+  font-family: var(--font-heading);
+  font-size: 90px;
+  color: var(--accent);
+  opacity: 0.15;
+  line-height: 1;
+  position: absolute;
+  top: 14px;
+  left: 24px;
+  pointer-events: none;
+  user-select: none;
+  font-weight: 800;
+}
+
+.text {
+  font-size: 15px;
+  color: var(--text-heading);
+  line-height: 1.75;
+  margin-bottom: 24px;
+  padding-top: 28px;
+  position: relative;
+  z-index: 1;
+}
+
+.stars {
+  color: var(--accent);
+  font-size: 14px;
+  letter-spacing: 3px;
+  margin-bottom: 22px;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.avatar {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent) 0%, rgba(28,30,33,0.8) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--text-heading);
+  flex-shrink: 0;
+  border: 1px solid rgba(255, 83, 32, 0.3);
+}
+
+.authorName {
+  font-family: var(--font-heading);
+  font-size: 14px;
+  color: var(--text-heading);
+  font-weight: 600;
+}
+
+.authorBrand {
+  font-size: 12px;
+  color: var(--text-body);
+  margin-top: 1px;
+}
+
+.metric {
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent);
+  background: rgba(255, 83, 32, 0.08);
+  border: 1px solid rgba(255, 83, 32, 0.2);
+  padding: 5px 12px;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 1199px) {
+  .inner { padding: 0 32px; }
+  .testimonials { grid-template-columns: 1fr; }
+  .statsBar { gap: 28px; flex-wrap: wrap; }
+  .heading { font-size: 36px; }
+}
+
+@media (max-width: 768px) {
+  .section { padding: 80px 0; }
+  .inner { padding: 0 20px; }
+  .heading { font-size: 28px; }
+  .statsBar {
+    flex-direction: column;
+    gap: 24px;
+    padding: 28px 24px;
+    align-items: flex-start;
+  }
+  .statDivider { width: 48px; height: 1px; }
+}

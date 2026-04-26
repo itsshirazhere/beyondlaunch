@@ -1,0 +1,175 @@
+.section {
+  position: relative;
+  padding: 80px 0 120px;
+  overflow: hidden;
+}
+
+.glow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse 55% 80% at 108% 50%, rgba(255, 83, 32, 0.07) 0%, transparent 60%);
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 60px;
+}
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  font-size: 11px;
+  color: var(--accent);
+  font-family: var(--font-body);
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+  padding: 6px 14px;
+  background: rgba(255, 83, 32, 0.07);
+  border: 1px solid rgba(255, 83, 32, 0.18);
+  border-radius: 100px;
+}
+
+.heading {
+  font-family: var(--font-heading);
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--text-heading);
+  line-height: 1.2;
+  margin-bottom: 16px;
+  letter-spacing: -0.015em;
+}
+
+.accentText { color: var(--accent); }
+
+.sub {
+  font-size: 16px;
+  color: var(--text-body);
+  max-width: 480px;
+  margin-bottom: 56px;
+  line-height: 1.7;
+}
+
+/* ── Grid ─────────────────────────────────────────────────── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* ── Card ─────────────────────────────────────────────────── */
+.card {
+  position: relative;
+  background: var(--surface);
+  border-radius: 18px;
+  padding: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  overflow: hidden;
+  cursor: default;
+}
+
+.card.cardHovered {
+  border-color: rgba(255, 83, 32, 0.22);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35), 0 0 40px rgba(255, 83, 32, 0.08);
+}
+
+.tag {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  font-size: 10px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: rgba(255, 83, 32, 0.1);
+  border: 1px solid rgba(255, 83, 32, 0.25);
+  padding: 3px 10px;
+  border-radius: 100px;
+}
+
+.cardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.num {
+  font-family: var(--font-heading);
+  font-size: 40px;
+  font-weight: 800;
+  color: rgba(255, 83, 32, 0.15);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  color: var(--text-heading);
+  font-weight: 700;
+  margin-bottom: 10px;
+  letter-spacing: -0.01em;
+}
+
+.desc {
+  font-size: 14px;
+  color: var(--text-body);
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.cardFooter {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.more {
+  font-size: 13px;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.arrow {
+  font-size: 13px;
+  color: var(--accent);
+  display: inline-block;
+}
+
+/* Animated bottom accent line */
+.bottomLine {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), rgba(255,83,32,0));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+.bottomLine.bottomLineActive {
+  transform: scaleX(1);
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 1199px) {
+  .inner { padding: 0 32px; }
+  .grid { grid-template-columns: 1fr; }
+  .heading { font-size: 36px; }
+}
+
+@media (max-width: 768px) {
+  .section { padding: 60px 0 80px; }
+  .inner { padding: 0 20px; }
+  .heading { font-size: 28px; }
+}

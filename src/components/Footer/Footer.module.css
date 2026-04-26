@@ -1,0 +1,51 @@
+.footer {
+  background: var(--bg);
+  border-top: 1px solid rgba(255, 83, 32, 0.15);
+  padding: 32px 0;
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.wordmark {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 64px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  opacity: 0.9;
+  transition: opacity 0.2s;
+}
+
+.wordmark:hover .logo {
+  opacity: 1;
+}
+
+.tagline {
+  font-size: 14px;
+  color: var(--text-body);
+}
+
+.copy {
+  font-size: 13px;
+  color: var(--text-body);
+}
+
+@media (max-width: 768px) {
+  .inner {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+    padding: 0 20px;
+  }
+}

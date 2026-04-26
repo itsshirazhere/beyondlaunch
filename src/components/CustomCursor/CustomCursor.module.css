@@ -1,0 +1,32 @@
+.cursor {
+  position: fixed;
+  top: -5px;
+  left: -5px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--accent);
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0;
+  transition: width 0.2s, height 0.2s, background-color 0.2s, border 0.2s, top 0.2s, left 0.2s, opacity 0.3s;
+}
+
+.cursor.visible {
+  opacity: 1;
+}
+
+.cursor.hovered {
+  width: 32px;
+  height: 32px;
+  top: -16px;
+  left: -16px;
+  background-color: transparent;
+  border: 2px solid var(--accent);
+}
+
+@media (pointer: coarse) {
+  .cursor {
+    display: none;
+  }
+}

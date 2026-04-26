@@ -1,0 +1,54 @@
+.bar {
+  overflow: hidden;
+  background: rgba(255, 83, 32, 0.04);
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 14px 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* fade edges */
+.bar::before,
+.bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 80px;
+  z-index: 2;
+  pointer-events: none;
+}
+.bar::before {
+  left: 0;
+  background: linear-gradient(90deg, var(--bg), transparent);
+}
+.bar::after {
+  right: 0;
+  background: linear-gradient(-90deg, var(--bg), transparent);
+}
+
+.track {
+  display: flex;
+  width: max-content;
+}
+
+.item {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  font-family: var(--font-body);
+  font-weight: 500;
+  color: var(--text-body);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0 44px;
+  white-space: nowrap;
+}
+
+.dot {
+  color: var(--accent);
+  font-size: 7px;
+  opacity: 0.8;
+}

@@ -1,0 +1,143 @@
+.section {
+  position: relative;
+  padding: 120px 0 80px;
+  overflow: hidden;
+}
+
+.glow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse 55% 80% at -8% 55%, rgba(255, 83, 32, 0.07) 0%, transparent 60%);
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 60px;
+}
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  color: var(--accent);
+  font-family: var(--font-body);
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+  padding: 6px 14px;
+  background: rgba(255, 83, 32, 0.07);
+  border: 1px solid rgba(255, 83, 32, 0.18);
+  border-radius: 100px;
+}
+
+.headRow {
+  margin-bottom: 60px;
+}
+
+.heading {
+  font-family: var(--font-heading);
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--text-heading);
+  line-height: 1.2;
+  max-width: 680px;
+}
+
+.dim {
+  color: var(--text-body);
+  font-weight: 500;
+}
+
+/* ── Cards ─────────────────────────────────────────────────── */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  transition: box-shadow 0.3s, border-color 0.3s;
+  cursor: default;
+}
+
+.card:hover {
+  box-shadow: 0 0 40px rgba(255, 83, 32, 0.12), 0 20px 40px rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 83, 32, 0.2);
+}
+
+/* Orange left accent bar */
+.accentBar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, var(--accent), rgba(255, 83, 32, 0.3));
+}
+
+.cardInner {
+  padding: 28px 24px 28px 28px;
+}
+
+.cardHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.iconCircle {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 83, 32, 0.1);
+  border: 1px solid rgba(255, 83, 32, 0.2);
+  border-radius: 50%;
+  font-size: 17px;
+}
+
+.cardNum {
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255, 83, 32, 0.3);
+  letter-spacing: 0.05em;
+}
+
+.cardTitle {
+  font-family: var(--font-heading);
+  font-size: 16px;
+  color: var(--text-heading);
+  font-weight: 600;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.cardBody {
+  font-size: 14px;
+  color: var(--text-body);
+  line-height: 1.7;
+}
+
+@media (max-width: 1199px) {
+  .inner { padding: 0 32px; }
+  .cards { grid-template-columns: 1fr; }
+  .heading { font-size: 36px; }
+}
+
+@media (max-width: 768px) {
+  .section { padding: 80px 0 60px; }
+  .inner { padding: 0 20px; }
+  .heading { font-size: 28px; }
+}

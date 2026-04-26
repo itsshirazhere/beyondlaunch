@@ -1,0 +1,161 @@
+.section {
+  position: relative;
+  background: var(--surface);
+  padding: 140px 0;
+  overflow: hidden;
+  text-align: center;
+}
+
+/* ── Glows ─────────────────────────────────────────────────── */
+.glowCenter {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse 90% 70% at 50% 50%, rgba(255, 83, 32, 0.18) 0%, transparent 65%);
+}
+.glowLeft {
+  position: absolute;
+  left: -10%;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  background: radial-gradient(ellipse 80% 80% at 0% 50%, rgba(255, 83, 32, 0.06) 0%, transparent 60%);
+  pointer-events: none;
+}
+.glowRight {
+  position: absolute;
+  right: -10%;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  background: radial-gradient(ellipse 80% 80% at 100% 50%, rgba(255, 83, 32, 0.06) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+/* Subtle grid */
+.grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 83, 32, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 83, 32, 0.04) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+}
+
+/* ── Content ───────────────────────────────────────────────── */
+.inner {
+  position: relative;
+  z-index: 1;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.label {
+  display: inline-flex;
+  font-size: 11px;
+  color: var(--accent);
+  font-family: var(--font-body);
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+  padding: 6px 14px;
+  background: rgba(255, 83, 32, 0.08);
+  border: 1px solid rgba(255, 83, 32, 0.22);
+  border-radius: 100px;
+}
+
+.heading {
+  font-family: var(--font-heading);
+  font-size: 64px;
+  font-weight: 800;
+  color: var(--text-heading);
+  line-height: 1.1;
+  margin-bottom: 24px;
+  letter-spacing: -0.025em;
+}
+
+.accentText {
+  color: var(--accent);
+  animation: glow 3s ease-in-out infinite;
+}
+
+@keyframes glow {
+  0%, 100% { text-shadow: 0 0 30px rgba(255,83,32,0.4); }
+  50%       { text-shadow: 0 0 70px rgba(255,83,32,0.75), 0 0 140px rgba(255,83,32,0.2); }
+}
+
+.sub {
+  font-size: 17px;
+  color: var(--text-body);
+  line-height: 1.7;
+  margin-bottom: 44px;
+}
+
+/* ── CTA button ─────────────────────────────────────────────── */
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--accent);
+  color: var(--text-heading);
+  font-family: var(--font-body);
+  font-size: 17px;
+  font-weight: 500;
+  padding: 18px 40px;
+  border-radius: 100px;
+  margin-bottom: 20px;
+  animation: pulse 2.8s ease-in-out infinite;
+  transition: background 0.2s;
+}
+.cta:hover { background: var(--accent-hover); }
+
+.ctaArrow {
+  display: inline-block;
+  transition: transform 0.2s;
+}
+.cta:hover .ctaArrow { transform: translateX(4px); }
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255,83,32,0.55), 0 6px 30px rgba(255,83,32,0.3); }
+  50%       { box-shadow: 0 0 0 14px rgba(255,83,32,0), 0 6px 60px rgba(255,83,32,0.5); }
+}
+
+.fine {
+  display: block;
+  font-size: 12px;
+  color: var(--text-muted);
+  letter-spacing: 0.03em;
+}
+
+/* ── Floating pills ─────────────────────────────────────────── */
+.pill {
+  position: absolute;
+  font-size: 11px;
+  font-family: var(--font-body);
+  font-weight: 500;
+  color: var(--text-body);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 8px 16px;
+  background: rgba(28, 30, 33, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-subtle);
+  border-radius: 100px;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.pillLeft  { left: 6%;  top: 30%; }
+.pillRight { right: 6%; top: 55%; }
+
+@media (max-width: 1199px) {
+  .pill { display: none; }
+}
+
+@media (max-width: 768px) {
+  .heading { font-size: 36px; }
+  .section  { padding: 100px 0; }
+}
