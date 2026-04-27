@@ -59,13 +59,17 @@ export default function CTASection() {
           No sales pitch. Just clarity.
         </p>
 
+        {/*<a href="mailto:hello@beyondlaunchmarketing.com" className={styles.email}>*/}
+        {/*  hello@beyondlaunchmarketing.com*/}
+        {/*</a>*/}
+
         {/* Decorative floating pills */}
         <motion.div
           className={`${styles.pill} ${styles.pillLeft}`}
           animate={{ y: [0, -8, 0] }}
           transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
         >
-          ◆ 48h delivery
+          ◆ Done-for-you
         </motion.div>
         <motion.div
           className={`${styles.pill} ${styles.pillRight}`}

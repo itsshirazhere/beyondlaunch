@@ -15,8 +15,13 @@ export default function Navbar() {
   const { scrollY } = useScroll()
 
   useEffect(() => {
-    return scrollY.on('change', (val) => setScrolled(val > 80))
+    return scrollY.on('change', (val) => setScrolled(val > 60))
   }, [scrollY])
+
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? 'hidden' : ''
+    return () => { document.body.style.overflow = '' }
+  }, [menuOpen])
 
   return (
     <motion.nav
@@ -62,8 +67,19 @@ export default function Navbar() {
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
-              transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+              transition={{ type: 'spring', stiffness: 320, damping: 32 }}
             >
+              <div className={styles.drawerHeader}>
+                <img src="/logo.png" alt="Beyond Launch" className={styles.drawerLogo} />
+                <button
+                  className={styles.drawerClose}
+                  onClick={() => setMenuOpen(false)}
+                  aria-label="Close menu"
+                >
+                  ✕
+                </button>
+              </div>
+
               <ul>
                 {links.map((l) => (
                   <li key={l.label}>

@@ -5,23 +5,23 @@ import styles from './ProcessSection.module.css'
 const steps = [
   {
     num: '01',
-    title: 'Diagnose',
-    desc: "We audit your current funnel, traffic sources, and conversion gaps to identify where revenue is leaking.",
-    detail: 'Deep-dive',
+    title: 'Audit',
+    desc: "We dig into your funnel, creatives, traffic, and conversion data — mapping exactly where attention is leaking before it becomes revenue.",
+    detail: 'Free · No obligation',
     delay: 0,
   },
   {
     num: '02',
-    title: 'Architect',
-    desc: "We design a tailored growth system — aligning ads, creatives, pages, and automation into a single flow.",
-    detail: 'Execution',
+    title: 'Build',
+    desc: "We design and deploy your full growth stack — ads, landing pages, creatives, and automation — engineered as one connected system, not separate parts.",
+    detail: 'End-to-end delivery',
     delay: 0.45,
   },
   {
     num: '03',
-    title: 'Execute & Optimise',
-    desc: "We launch, test, and continuously optimise — focusing only on metrics that impact revenue..",
-    detail: 'Scale',
+    title: 'Scale',
+    desc: "We run continuous optimisation cycles — cutting what doesn't work, doubling down on what does, with revenue as the only metric that matters.",
+    detail: 'Ongoing partnership',
     delay: 0.9,
   },
 ]
@@ -50,7 +50,7 @@ export default function ProcessSection() {
           transition={{ delay: 0.1 }}
         >
           Three steps.{' '}
-          <span className={styles.accentText}>Real results.</span>
+          <span className={styles.accentText}>One system.</span>
         </motion.h2>
 
         {/* Steps */}

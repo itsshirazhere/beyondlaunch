@@ -7,14 +7,15 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 60px;
-  transition: background 0.3s, border-color 0.3s, backdrop-filter 0.3s;
+  padding: 10px 60px;
+  transition: background 0.3s, border-color 0.3s, backdrop-filter 0.3s, padding 0.3s;
 }
 
 .nav.scrolled {
-  background: rgba(28, 30, 33, 0.85);
+  background: rgba(28, 30, 33, 0.88);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(255, 83, 32, 0.2);
+  padding: 7px 60px;
 }
 
 .wordmark {
@@ -24,11 +25,15 @@
 }
 
 .logo {
-  height: 80px;
+  height: 40px;
   width: auto;
   object-fit: contain;
   display: block;
-  /* The PNG has a transparent bg; white text shows fine on the dark nav */
+  transition: height 0.3s;
+}
+
+.nav.scrolled .logo {
+  height: 34px;
 }
 
 .links {
@@ -53,15 +58,17 @@
   font-family: var(--font-body);
   font-size: 14px;
   font-weight: 500;
-  padding: 10px 22px;
+  padding: 9px 20px;
   border-radius: 100px;
   transition: background 0.2s;
+  white-space: nowrap;
 }
 
 .cta:hover {
   background: var(--accent-hover);
 }
 
+/* ── Hamburger ──────────────────────────────────────────────── */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -69,11 +76,12 @@
   padding: 4px;
   background: none;
   border: none;
+  cursor: pointer;
 }
 
 .bar {
   display: block;
-  width: 24px;
+  width: 22px;
   height: 2px;
   background: var(--text-heading);
   border-radius: 2px;
@@ -84,11 +92,13 @@
 .open2 { opacity: 0; }
 .open3 { transform: translateY(-7px) rotate(-45deg); }
 
+/* ── Mobile drawer ──────────────────────────────────────────── */
 .overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.55);
   z-index: 998;
+  backdrop-filter: blur(2px);
 }
 
 .drawer {
@@ -96,39 +106,100 @@
   top: 0;
   right: 0;
   bottom: 0;
-  width: 280px;
+  width: min(300px, 85vw);
   background: var(--surface);
-  padding: 80px 40px 40px;
+  padding: 28px 32px 40px;
   z-index: 999;
   border-left: 1px solid rgba(255, 83, 32, 0.15);
+  display: flex;
+  flex-direction: column;
+}
+
+.drawerHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.drawerLogo {
+  height: 32px;
+  width: auto;
+  display: block;
+}
+
+.drawerClose {
+  background: none;
+  border: none;
+  color: var(--text-body);
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 6px;
+  transition: color 0.2s, background 0.2s;
+}
+.drawerClose:hover {
+  color: var(--text-heading);
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .drawer ul {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 24px;
+  flex: 1;
 }
 
 .drawer a {
   font-family: var(--font-heading);
-  font-size: 22px;
+  font-size: 20px;
   color: var(--text-heading);
   font-weight: 600;
+  transition: color 0.2s;
 }
+.drawer a:hover { color: var(--accent); }
 
 .ctaMobile {
   display: inline-block;
   background: var(--accent);
   padding: 12px 24px;
   border-radius: 100px;
-  font-size: 16px !important;
+  font-size: 15px !important;
   color: var(--text-heading) !important;
+  transition: background 0.2s;
+}
+.ctaMobile:hover {
+  background: var(--accent-hover) !important;
+  color: var(--text-heading) !important;
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .nav {
+    padding: 10px 32px;
+  }
+  .nav.scrolled {
+    padding: 7px 32px;
+  }
+  .links {
+    gap: 24px;
+  }
 }
 
 @media (max-width: 768px) {
   .nav {
-    padding: 16px 24px;
+    padding: 10px 20px;
+  }
+  .nav.scrolled {
+    padding: 7px 20px;
+  }
+  .logo {
+    height: 32px;
+  }
+  .nav.scrolled .logo {
+    height: 28px;
   }
   .links,
   .cta {

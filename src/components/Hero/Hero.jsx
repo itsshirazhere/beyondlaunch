@@ -100,7 +100,7 @@ export default function Hero() {
             <motion.div className={styles.stats} variants={item}>
               {[
                 ['Full-stack', 'growth system'],
-                ['48h', 'first delivery'],
+                ['Scalable', 'by design'],
                 ['D2C', 'brands only'],
               ].map(([val, lbl]) => (
                 <div key={val} className={styles.stat}>
@@ -117,7 +117,7 @@ export default function Hero() {
           <HeroScene />
 
           <FloatingCard value="Full-stack Growth" label="ads to automation" icon="⚡" delay={0.9} x="-30px" y="36%" />
-          <FloatingCard value="48h Turnaround" label="from brief to delivery" icon="⏱" delay={1.1} x="52%" y="7%" />
+          <FloatingCard value="Done-for-you" label="we own the stack" icon="◆" delay={1.1} x="52%" y="7%" />
           <FloatingCard value="D2C Exclusive" label="built for e-commerce" icon="🎯" delay={1.3} x="6%" y="74%" />
         </div>
       </div>

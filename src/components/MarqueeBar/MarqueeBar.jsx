@@ -2,14 +2,14 @@ import { motion } from 'framer-motion'
 import styles from './MarqueeBar.module.css'
 
 const items = [
-  '3× avg revenue lift',
-  '48h first delivery',
-  '23 D2C brands scaled',
-  '+320% avg conversion',
   'D2C brands only',
-  'No retainer needed',
-  'Results in 30 days',
-  'Instagram → revenue',
+  'Paid acquisition',
+  'Conversion pages',
+  'Performance creatives',
+  'End-to-end execution',
+  'Marketing automation',
+  'Full-stack growth',
+  'Scroll to revenue',
 ]
 
 export default function MarqueeBar() {

@@ -79,8 +79,8 @@ export default function SocialProof() {
           </div>
           <div className={styles.statDivider} />
           <div className={styles.textStat}>
-            <div className={styles.textStatVal}>48h</div>
-            <div className={styles.textStatLabel}>First deliverable</div>
+            <div className={styles.textStatVal}>Expert</div>
+            <div className={styles.textStatLabel}>Led execution</div>
           </div>
           <div className={styles.statDivider} />
           <div className={styles.textStat}>

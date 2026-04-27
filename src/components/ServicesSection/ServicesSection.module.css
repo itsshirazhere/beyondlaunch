@@ -164,12 +164,20 @@
 /* ── Responsive ─────────────────────────────────────────────── */
 @media (max-width: 1199px) {
   .inner { padding: 0 32px; }
-  .grid { grid-template-columns: 1fr; }
   .heading { font-size: 36px; }
+}
+
+@media (max-width: 900px) {
+  .grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 768px) {
   .section { padding: 60px 0 80px; }
   .inner { padding: 0 20px; }
   .heading { font-size: 28px; }
+  .sub { font-size: 15px; }
+}
+
+@media (max-width: 420px) {
+  .heading { font-size: 24px; }
 }

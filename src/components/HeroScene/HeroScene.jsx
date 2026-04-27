@@ -15,14 +15,15 @@ export default function HeroScene() {
     renderer.setSize(container.clientWidth, container.clientHeight)
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
     renderer.setClearColor(0x000000, 0)
+    renderer.domElement.style.display = 'block'
     container.appendChild(renderer.domElement)
 
     const scene = new THREE.Scene()
     const group = new THREE.Group()
     scene.add(group)
 
-    const camera = new THREE.PerspectiveCamera(55, container.clientWidth / container.clientHeight, 0.1, 100)
-    camera.position.z = 3.6
+    const camera = new THREE.PerspectiveCamera(58, container.clientWidth / container.clientHeight, 0.1, 100)
+    camera.position.z = 4.6
 
     // ── Lighting ──────────────────────────────────────────────────────────
     const keyLight = new THREE.PointLight(0xFF5320, 5, 12)
@@ -184,5 +185,10 @@ export default function HeroScene() {
     }
   }, [])
 
-  return <div ref={mountRef} className={styles.canvas} />
+  return (
+    <div className={styles.sceneWrap}>
+      <div className={styles.glow} />
+      <div ref={mountRef} className={styles.canvas} />
+    </div>
+  )
 }

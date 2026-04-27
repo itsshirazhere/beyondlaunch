@@ -3,8 +3,10 @@
   min-height: 100vh;
   display: flex;
   align-items: center;
-  overflow: hidden;
-  padding-top: 80px;
+  padding-top: 60px;
+  /* clip only vertically so the section doesn't cause horizontal scroll,
+     but allow the 3D scene to bleed beyond the right column */
+  overflow-x: clip;
 }
 
 /* ── Background layers ─────────────────────────────────────── */
@@ -64,7 +66,7 @@
   max-width: 1400px;
   margin: 0 auto;
   padding: 60px 60px;
-  min-height: calc(100vh - 80px);
+  min-height: calc(100vh - 60px);
   align-items: center;
 }
 
@@ -193,6 +195,7 @@
 .right {
   position: relative;
   height: 600px;
+  overflow: visible;
 }
 
 /* ── Bottom fade ────────────────────────────────────────────── */
@@ -214,13 +217,25 @@
     padding: 60px 32px;
   }
   .right { display: none; }
-  .h1 { font-size: 60px; }
-  .left { padding-right: 0; }
+  .h1 { font-size: 64px; }
+  .left { padding-right: 0; max-width: 680px; }
+}
+
+@media (max-width: 1024px) {
+  .h1 { font-size: 54px; }
+  .inner { padding: 50px 32px; }
 }
 
 @media (max-width: 768px) {
-  .h1 { font-size: 42px; }
-  .inner { padding: 40px 20px; }
-  .sub { font-size: 15px; }
-  .stats { gap: 20px; flex-wrap: wrap; }
+  .h1 { font-size: 40px; }
+  .inner { padding: 32px 20px; }
+  .sub { font-size: 15px; max-width: 100%; }
+  .stats { gap: 16px; flex-wrap: wrap; }
+  .statVal { font-size: 18px; }
+  .ctaRow { gap: 14px; }
+}
+
+@media (max-width: 420px) {
+  .h1 { font-size: 34px; }
+  .label { font-size: 10px; }
 }
