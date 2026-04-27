@@ -33,14 +33,13 @@ export default function CTASection() {
         </motion.span>
 
         <h2 className={styles.heading}>
-          Ready to turn your
+          Ready to build a system that
           <br />
-          <span className={styles.accentText}>scroll into sales?</span>
+          <span className={styles.accentText}>actually converts?</span>
         </h2>
 
         <p className={styles.sub}>
-          Book a free audit. We'll show you exactly where you're losing orders
-          and how to fix it — no strings attached.
+          Get a clear breakdown of where you’re losing revenue — and what to fix first.
         </p>
 
         <motion.button
@@ -49,7 +48,7 @@ export default function CTASection() {
           whileTap={{ scale: 0.97 }}
           onClick={() => {
             // REPLACE: calendly link
-            window.open('https://calendly.com', '_blank')
+            window.open('https://calendly.com/shirazyousuf2017/30min', '_blank')
           }}
         >
           Book a free audit
@@ -57,7 +56,7 @@ export default function CTASection() {
         </motion.button>
 
         <p className={styles.fine}>
-          No commitment. No agency jargon. Just a clear plan.
+          No sales pitch. Just clarity.
         </p>
 
         {/* Decorative floating pills */}

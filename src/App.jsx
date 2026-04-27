@@ -19,7 +19,7 @@ function App() {
         <MarqueeBar />
         <section id="services"><ProblemSection /><ServicesSection /></section>
         <section id="work"><ProcessSection /></section>
-        <section id="process"><SocialProof /></section>
+        {/*<section id="process"><SocialProof /></section>*/}
         <section id="contact"><CTASection /></section>
       </main>
       <Footer />

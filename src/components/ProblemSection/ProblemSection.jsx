@@ -5,20 +5,20 @@ const problems = [
   {
     icon: '⚠',
     num: '01',
-    title: "Your reels get views. But no one's buying.",
-    body: 'Great content with no path to purchase leaks sales every single day.',
+    title: "Traffic without conversion.",
+    body: 'You’re getting attention, but there’s no structured path to purchase. Content alone doesn’t convert — systems do.',
   },
   {
     icon: '💬',
     num: '02',
-    title: "You're closing orders over DMs. Manually. Every day.",
-    body: "Unsustainable, unscalable, and you're leaving half your buyers behind.",
+    title: "Manual sales dependency.",
+    body: "Closing through DMs and follow-ups isn’t scalable. Revenue shouldn’t depend on constant manual effort.",
   },
   {
     icon: '🌐',
     num: '03',
-    title: 'You tried a website. It just sits there.',
-    body: 'A homepage with no funnel is just an expensive business card.',
+    title: 'Disconnected stack.',
+    body: 'Ads, website, and messaging operate in silos. Without alignment, performance drops at every step.',
   },
 ]
 
@@ -45,9 +45,9 @@ export default function ProblemSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            You're doing everything right.
+            Growth isn’t broken. The system is.
             <br />
-            <span className={styles.dim}>So why aren't orders coming in?</span>
+            <span className={styles.dim}>COMMON FAILURE POINTS</span>
           </motion.h2>
         </div>
 

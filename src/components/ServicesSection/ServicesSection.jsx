@@ -6,29 +6,29 @@ import styles from './ServicesSection.module.css'
 const services = [
   {
     num: '01',
-    title: 'Social Funnels',       // REPLACE: service title
-    desc: 'We turn your Instagram content into a structured sales funnel that converts followers into buyers on autopilot.',
+    title: 'Acquisition Systems',       // REPLACE: service title
+    desc: 'Meta ads structured for consistent, scalable customer acquisition — backed by creative testing and data loops.',
     shape: 'cube',
     tag: 'Most popular',
   },
   {
     num: '02',
-    title: 'Landing Pages',        // REPLACE: service title
-    desc: 'High-converting D2C landing pages built to capture traffic and push it straight to checkout — no distractions.',
+    title: 'Conversion Infrastructure',        // REPLACE: service title
+    desc: 'High-performance landing pages designed to reduce friction and maximise purchase intent.',
     shape: 'sphere',
     tag: null,
   },
   {
     num: '03',
-    title: 'AI-Powered Video',     // REPLACE: service title
-    desc: 'Scroll-stopping short-form video produced with AI tools — faster, cheaper, and optimised for platform algorithms.',
+    title: 'Creative Engine',     // REPLACE: service title
+    desc: 'AI-assisted, performance-driven creatives built for scroll-stopping and conversion — not vanity engagement.',
     shape: 'pyramid',
     tag: null,
   },
   {
     num: '04',
-    title: 'WhatsApp Automations', // REPLACE: service title
-    desc: 'Automated WhatsApp flows that follow up with leads, recover abandoned carts, and close sales while you sleep.',
+    title: 'Automation Layer', // REPLACE: service title
+    desc: 'WhatsApp, email, and AI workflows that capture, nurture, and convert — even when you’re offline.',
     shape: 'ring',
     tag: 'New',
   },
@@ -81,14 +81,14 @@ function TiltCard({ service, index }) {
         <h3 className={styles.title}>{service.title}</h3>
         <p className={styles.desc}>{service.desc}</p>
 
-        <div className={styles.cardFooter}>
-          <span className={styles.more}>Learn more</span>
-          <motion.span
-            className={styles.arrow}
-            animate={hovered ? { x: 4 } : { x: 0 }}
-            transition={{ duration: 0.2 }}
-          >→</motion.span>
-        </div>
+        {/*<div className={styles.cardFooter}>*/}
+        {/*  <span className={styles.more}>Learn more</span>*/}
+        {/*  <motion.span*/}
+        {/*    className={styles.arrow}*/}
+        {/*    animate={hovered ? { x: 4 } : { x: 0 }}*/}
+        {/*    transition={{ duration: 0.2 }}*/}
+        {/*  >→</motion.span>*/}
+        {/*</div>*/}
 
         {/* Bottom gradient line */}
         <div className={`${styles.bottomLine} ${hovered ? styles.bottomLineActive : ''}`} />
@@ -120,7 +120,7 @@ export default function ServicesSection() {
         >
           Everything between
           <br />
-          <span className={styles.accentText}>attention</span> and revenue.
+          <span className={styles.accentText}>attention</span> and revenue<span className={styles.accentText}> — engineered</span>
         </motion.h2>
 
         <motion.p
@@ -130,7 +130,7 @@ export default function ServicesSection() {
           viewport={{ once: true }}
           transition={{ delay: 0.18 }}
         >
-          We don't do vanity metrics. Every service directly affects how many orders you get.
+          We build tightly integrated systems where each layer compounds performance.
         </motion.p>
 
         <motion.div

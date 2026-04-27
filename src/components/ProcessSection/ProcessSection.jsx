@@ -5,23 +5,23 @@ import styles from './ProcessSection.module.css'
 const steps = [
   {
     num: '01',
-    title: 'Audit',
-    desc: "We look at your Instagram, funnel, and website. We find exactly where you're losing sales and why.",
-    detail: '2–3 day deep-dive',
+    title: 'Diagnose',
+    desc: "We audit your current funnel, traffic sources, and conversion gaps to identify where revenue is leaking.",
+    detail: 'Deep-dive',
     delay: 0,
   },
   {
     num: '02',
-    title: 'Build',
-    desc: "We fix it. Landing pages, AI videos, WhatsApp flows — whatever moves the needle for your specific brand.",
-    detail: '1–2 week execution',
+    title: 'Architect',
+    desc: "We design a tailored growth system — aligning ads, creatives, pages, and automation into a single flow.",
+    detail: 'Execution',
     delay: 0.45,
   },
   {
     num: '03',
-    title: 'Sell',
-    desc: "Orders start coming in. We track, optimise, and scale everything that's working.",
-    detail: 'Ongoing scale',
+    title: 'Execute & Optimise',
+    desc: "We launch, test, and continuously optimise — focusing only on metrics that impact revenue..",
+    detail: 'Scale',
     delay: 0.9,
   },
 ]

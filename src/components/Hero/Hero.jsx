@@ -78,8 +78,7 @@ export default function Hero() {
             </h1>
 
             <motion.p className={styles.sub} variants={item}>
-              We help D2C brands turn Instagram attention into consistent revenue.
-              No fluff. Just funnels, content, and conversions that actually work.
+              We design and operate end-to-end growth systems — from ads and creatives to landing pages and automation — built to convert, not just attract
             </motion.p>
 
             <motion.div variants={item} className={styles.ctaRow}>
@@ -89,18 +88,18 @@ export default function Hero() {
                 whileTap={{ scale: 0.97 }}
                 onClick={() => {
                   // REPLACE: calendly link
-                  window.open('https://calendly.com', '_blank')
+                  window.open('https://calendly.com/shirazyousuf2017/30min', '_blank')
                 }}
               >
                 Book a free audit
                 <span className={styles.ctaArrow}>→</span>
               </motion.button>
-              <span className={styles.ctaNote}>No commitment. Takes 2 min.</span>
+              <span className={styles.ctaNote}>No commitment</span>
             </motion.div>
 
             <motion.div className={styles.stats} variants={item}>
               {[
-                ['3×', 'avg revenue lift'],
+                ['Full-stack', 'growth system'],
                 ['48h', 'first delivery'],
                 ['D2C', 'brands only'],
               ].map(([val, lbl]) => (
@@ -117,9 +116,9 @@ export default function Hero() {
         <div className={styles.right}>
           <HeroScene />
 
-          <FloatingCard value="+320% conversion" label="avg across clients" icon="↑" delay={0.9} x="-30px" y="36%" />
-          <FloatingCard value="48h turnaround" label="from brief to delivery" icon="⏱" delay={1.1} x="52%" y="7%" />
-          <FloatingCard value="23 brands scaled" label="and counting" icon="🔥" delay={1.3} x="6%" y="74%" />
+          <FloatingCard value="Full-stack Growth" label="ads to automation" icon="⚡" delay={0.9} x="-30px" y="36%" />
+          <FloatingCard value="48h Turnaround" label="from brief to delivery" icon="⏱" delay={1.1} x="52%" y="7%" />
+          <FloatingCard value="D2C Exclusive" label="built for e-commerce" icon="🎯" delay={1.3} x="6%" y="74%" />
         </div>
       </div>
 
