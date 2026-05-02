@@ -19,7 +19,7 @@
 }
 
 .logo {
-  height: 90px;
+  height: 32px;
   width: auto;
   object-fit: contain;
   display: block;
@@ -55,5 +55,5 @@
     text-align: center;
     padding: 0 20px;
   }
-  .logo { height: 52px; }
+  .logo { height: 26px; }
 }

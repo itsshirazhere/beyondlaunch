@@ -1,11 +1,10 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence, useScroll } from 'framer-motion'
 import styles from './Navbar.module.css'
 
 const links = [
   { label: 'Services', href: '#services' },
-  { label: 'Work', href: '#work' },
-  { label: 'Process', href: '#process' },
+{ label: 'Process', href: '#process' },
   { label: 'Contact', href: '#contact' },
 ]
 
@@ -13,14 +12,30 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const { scrollY } = useScroll()
+  const savedScrollY = useRef(0)
 
   useEffect(() => {
     return scrollY.on('change', (val) => setScrolled(val > 60))
   }, [scrollY])
 
+  // iOS-safe scroll lock: position:fixed preserves scroll position
   useEffect(() => {
-    document.body.style.overflow = menuOpen ? 'hidden' : ''
-    return () => { document.body.style.overflow = '' }
+    if (menuOpen) {
+      savedScrollY.current = window.scrollY
+      document.body.style.position = 'fixed'
+      document.body.style.top = `-${savedScrollY.current}px`
+      document.body.style.width = '100%'
+    } else {
+      document.body.style.position = ''
+      document.body.style.top = ''
+      document.body.style.width = ''
+      window.scrollTo(0, savedScrollY.current)
+    }
+    return () => {
+      document.body.style.position = ''
+      document.body.style.top = ''
+      document.body.style.width = ''
+    }
   }, [menuOpen])
 
   return (
@@ -67,7 +82,7 @@ export default function Navbar() {
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
-              transition={{ type: 'spring', stiffness: 320, damping: 32 }}
+              transition={{ type: 'spring', stiffness: 300, damping: 30 }}
             >
               <div className={styles.drawerHeader}>
                 <img src="/logo.png" alt="Beyond Launch" className={styles.drawerLogo} />
@@ -80,18 +95,19 @@ export default function Navbar() {
                 </button>
               </div>
 
-              <ul>
+              <ul className={styles.drawerLinks}>
                 {links.map((l) => (
                   <li key={l.label}>
                     <a href={l.href} onClick={() => setMenuOpen(false)}>{l.label}</a>
                   </li>
                 ))}
-                <li>
-                  <a href="#contact" className={styles.ctaMobile} onClick={() => setMenuOpen(false)}>
-                    Book a free audit
-                  </a>
-                </li>
               </ul>
+
+              <div className={styles.drawerFooter}>
+                <a href="#contact" className={styles.ctaMobile} onClick={() => setMenuOpen(false)}>
+                  Book a free audit
+                </a>
+              </div>
             </motion.div>
           </>
         )}
